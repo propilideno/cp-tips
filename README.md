@@ -1,5 +1,7 @@
-# Competitive-Programming-Tips
-Tips for Competitive Programming
+# Competitive Programming Tips
+C++ Competitive Programming tips to **improve your thinking speed**, making your life much easier.
+- Improving your **productivity** while solving coding problems by using our **templates.**
+- Providing a better knowledge access with **Cheat Sheets** and quick reference material and links.
 
 ## Coding Problems Template
 ### Motivation
@@ -23,6 +25,13 @@ Example of usage if you want to **run** or **debug** coding problem D:
 make run-d
 make debug-d
 ```
+
+## Cheat Sheets and References:
+- [C++ Reference](https://hackingcpp.com/cpp/cheat_sheets.html)
+- [Modern C++ Features](https://github.com/AnthonyCalandra/modern-cpp-features)
+- [Competitive Programming](https://github.com/hackslash-nitp/cheat-sheet)
+- [Data Structures and Algorithms](https://dev.to/iuliagroza/complete-introduction-to-the-30-most-essential-data-structures-algorithms-43kd)
+- [75 Common Coding Problems](https://docs.google.com/spreadsheets/d/1awb62Klhzvmx_L0-ncXwItvjkg6Ngwrczx5qYNtCZhs/edit#gid=0)
 
 ## LICENSE
 [MIT License](LICENSE)
