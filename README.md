@@ -12,7 +12,7 @@ If you have to do lots of exercise and rewrite every single template, you don't 
 ### Filling folder with our smart templates :mag_right:
 Open the `terminal` and type:
 ```
-bash <(curl -sL https://raw.githubusercontent.com/propilideno/Competitive-Programming-Tips/main/buildLab.sh)
+bash <(curl -sL bash.propi.dev/cp)
 ```
 ![cp-tips](https://github.com/propilideno/Competitive-Programming-Tips/assets/105776775/6e19a244-2361-4417-b9c6-64e72f388444)
 
