@@ -1,4 +1,6 @@
 # Competitive Programming Tips :ninja::dart:
+[ [Templates](#filling-folder-with-our-smart-templates-mag_right) | [Usage Example](#running-and-debugging-man_technologist) | [Cheat Sheets](#cheat-sheets-and-references-page_facing_up) ]
+
 C++ Competitive Programming tips to **improve your thinking speed**, making your life much easier.
 - Improving your **productivity** while solving coding problems by using our **templates.**
 - Providing a better knowledge access with **Cheat Sheets** and quick reference material and links.
