@@ -1,0 +1,47 @@
+# This is a basic workflow to help you get started with Actions
+
+name: Shortened Link Integrity Check
+
+# Controls when the workflow will run
+on:
+  schedule:
+    - cron: '0 0 * * *'
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "build"
+  build:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v3
+
+      # Runs a set of commands using the runners shell
+      - name: Verify URL integrity
+        run: |
+          shortened_url="bash.propi.dev/cp"
+          expected_url="https://raw.githubusercontent.com/propilideno/Competitive-Programming-Tips/main/buildLab.sh"
+
+          # Obter o valor do campo "Location" usando o curl
+          final_url=$(curl --head --location --silent "$shortened_url" | awk -F ': ' '/Location/{print $2}')
+
+          # Remover qualquer espaço em branco extra nas variáveis
+          final_url=$(echo "$final_url" | tr -d '[:space:]')
+          expected_url=$(echo "$expected_url" | tr -d '[:space:]')
+
+          if [ "$final_url" == "$expected_url" ]; then
+            echo "SUCCESS: URL '$shortened_url' points to '$expected_url'"
+          else
+            echo "SECURITY ERROR: URL '$shortened_url' don't points to '$expected_url'"
+            exit 1
+          fi
