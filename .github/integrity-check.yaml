@@ -1,0 +1,24 @@
+name: Integrity Check
+
+on: [push]
+
+jobs:
+  check-integrity:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Verify URL integrity
+      run: |
+        #Verity if my shortened url points to my bash link
+        url="http://bash.propi.dev"
+        expected_url="https://raw.githubusercontent.com/propilideno/Competitive-Programming-Tips/main/buildLab.sh"
+        
+        response=$(curl -s -o /dev/null -w "%{url_effective}" $url)
+        
+        if [ "$response" != "$expected_url" ]; then
+          echo "SECURITY ERROR: URL $url doesn't points to $expected_url."
+          exit 1
+        fi
