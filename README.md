@@ -16,7 +16,7 @@ Open the `terminal` and type:
 ```
 bash <(curl -sL bash.propi.dev/cp)
 ```
-![cp-tips](https://github.com/propilideno/Competitive-Programming-Tips/assets/105776775/6e19a244-2361-4417-b9c6-64e72f388444)
+![cp-tips](https://github.com/propilideno/Competitive-Programming-Tips/assets/105776775/ed7a636c-f4dd-4849-8e4f-6fa2e2bc5379)
 
 ### Running and Debugging :man_technologist:
 After runned `bash script`, you can use **Makefile** to run and debug your coding problems.
