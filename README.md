@@ -13,12 +13,11 @@ C++ Competitive Programming tips to **improve your thinking speed**, making your
 If you have to do lots of exercise and rewrite every single template, you don't need to do this anymore. With our templates, you can fill a folder with usefull files, perfect for your job.
 
 ### Filling folder with `.cpp`, `.txt` and `Makefile` :mag_right:
-Open the `terminal` and type:
-Current version (**Main Branch**)
+Open the `terminal` and type for, **current** version (**main** branch)
 ```
 bash <(curl -sL bash.propi.dev/cp)
 ```
-Upcoming version (**Develop Branch**)
+**upcoming** version (**develop** branch)
 ```
 bash <(curl -sL bash.propi.dev/upcoming/cp)
 ```
