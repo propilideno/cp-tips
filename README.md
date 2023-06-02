@@ -21,7 +21,7 @@ bash <(curl -sL bash.propi.dev/cp)
 ```
 **Upcoming** version (**Develop** branch)
 ```
-bash <(curl -sL bash.propi.dev/cp) up
+bash <(curl -sL bash.propi.dev/upcoming/cp) up
 ```
 
 ![cp-tips](https://github.com/propilideno/Competitive-Programming-Tips/assets/105776775/ed7a636c-f4dd-4849-8e4f-6fa2e2bc5379)
