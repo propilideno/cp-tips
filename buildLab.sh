@@ -1,7 +1,21 @@
 #!/bin/bash
 
-solutionTemplate=$(curl -s https://raw.githubusercontent.com/propilideno/Competitive-Programming-Tips/develop/templates/cpp/basic.cpp)
-makefileTemplate='run-%:\n\tg++ $*.cpp\n\t./a.out < input/$*.txt\n\ndebug-%:\n\tg++ -g $*.cpp\n\tgdb -ex "run < input/$*.txt" ./a.out'
+function selectBranch(){
+	branch="main" #Default Branch
+	if [[ $# != 0 ]]; then
+		if [[ $1 != "$branch" && "$1" == "up" ]]; then
+			branch="develop"
+		else
+			exit_failure "'$1' is not a valid choice!"
+		fi
+	fi
+}
+
+function settings(){
+	selectBranch $1
+	solutionTemplate=$(curl -s https://raw.githubusercontent.com/propilideno/Competitive-Programming-Tips/$branch/templates/cpp/basic.cpp)
+	makefileTemplate=$(curl -s https://raw.githubusercontent.com/propilideno/Competitive-Programming-Tips/$branch/templates/cpp/Makefile)
+}
 
 function chr() {
 	local ascii_Value=$(awk -v v="$1" 'BEGIN{printf "%c", v}')
@@ -22,19 +36,28 @@ function createFiles(){
     done
 }
 
+function exit_failure(){
+	echo "Something got wrong! Check our current documentation in: https://propi.dev/cp"
+	if [[ $# != 0 ]]; then
+		echo "<ERROR> $1"
+	fi
+	exit 1
+}
+
 function greetings(){
     printf "\n==> All files was created with SUCCESS !!!\n"
     echo "==> Contribute with us giving this repo a Star ⭐"
     echo "Maintainers:"
-    printf "\t - Lucas R. de Almeida       | @propilideno\n"
+    printf "\t - Lucas R. de Almeida       | hello@propi.dev\n"
 	echo "Honorable Mentions:"
     printf "\t - Giovanni V. Comarela      | gc@inf.ufes.br\n"
     exit 1
 }
 
 function main(){
+	settings $1
 	createFiles
 	greetings
 }
 
-main
+main $1
