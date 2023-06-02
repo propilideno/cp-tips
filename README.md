@@ -14,9 +14,15 @@ If you have to do lots of exercise and rewrite every single template, you don't 
 
 ### Filling folder with `.cpp`, `.txt` and `Makefile` :mag_right:
 Open the `terminal` and type:
+Current version (**Main Branch**)
 ```
 bash <(curl -sL bash.propi.dev/cp)
 ```
+Upcoming version (**Develop Branch**)
+```
+bash <(curl -sL bash.propi.dev/upcoming/cp)
+```
+
 ![cp-tips](https://github.com/propilideno/Competitive-Programming-Tips/assets/105776775/ed7a636c-f4dd-4849-8e4f-6fa2e2bc5379)
 
 ### Running and Debugging :man_technologist:
