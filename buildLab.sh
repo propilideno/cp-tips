@@ -26,7 +26,7 @@ function greetings(){
     printf "\n==> All files was created with SUCCESS !!!\n"
     echo "==> Contribute with us giving this repo a Star ⭐"
     echo "Maintainers:"
-    printf "\t - Lucas R. de Almeida       | @propilideno\n"
+    printf "\t - Lucas R. de Almeida       | hello@propi.dev\n"
 	echo "Honorable Mentions:"
     printf "\t - Giovanni V. Comarela      | gc@inf.ufes.br\n"
     exit 1
