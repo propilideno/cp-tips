@@ -1,6 +1,6 @@
 #!/bin/bash
 
-solutionTemplate=$(cat templates/c++/basic.cpp)
+solutionTemplate=$(curl -s https://raw.githubusercontent.com/propilideno/Competitive-Programming-Tips/develop/templates/cpp/basic.cpp)
 makefileTemplate='run-%:\n\tg++ $*.cpp\n\t./a.out < input/$*.txt\n\ndebug-%:\n\tg++ -g $*.cpp\n\tgdb -ex "run < input/$*.txt" ./a.out'
 
 function chr() {
