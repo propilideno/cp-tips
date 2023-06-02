@@ -1,6 +1,6 @@
 #!/bin/bash
 
-solutionTemplate='#include <bits/stdc++.h>\n\n#define DEBUG false\n#define OJ_DEBUG\n\n#define $(x) {if (DEBUG) {cout << __LINE__ << ": "; {x} cout << endl;}}\n#define _(x) {cout << #x << " = " << x << " ";}\n\nconst double E = 1e-8;\nconst double PI = acos(-1);\n\nusing namespace std;\n\nclass Solution{\npublic:\n\tSolution(){}\n\tvoid problem(vector<int>& nums){}\nprivate:\n\tvector<int> nums;\n};\n\nint main(){\n\tios::sync_with_stdio(false);\n\tstring line;\n\twhile(getline(cin,line)){\n\t\tcout << line << endl;\n\t}\n\n}'
+solutionTemplate=$(cat templates/c++/basic.cpp)
 makefileTemplate='run-%:\n\tg++ $*.cpp\n\t./a.out < input/$*.txt\n\ndebug-%:\n\tg++ -g $*.cpp\n\tgdb -ex "run < input/$*.txt" ./a.out'
 
 function chr() {
