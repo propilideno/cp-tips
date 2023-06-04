@@ -1,10 +1,12 @@
 # Competitive Programming Tips :ninja::dart:
-[ [Templates](#filling-folder-with-cpp-txt-and-makefile-mag_right) | [Usage Example](#running-and-debugging-man_technologist) | [Cheat Sheets](#cheat-sheets-and-references-page_facing_up) ]
+[ [**:scroll: Templates :scroll:**](#filling-folder-with-cpp-txt-and-makefile-mag_right) | [Usage Example](#running-and-debugging-man_technologist) | [:page_facing_up: Cheat Sheets :page_facing_up:](#cheat-sheets-and-references-page_facing_up) ]
 
 C++ Competitive Programming tips to **improve your thinking speed**, making your life much easier.
 - You'll be able to **quickstart** your coding problems.
 - Improving your **productivity** while solving coding problems by using our **templates.**
 - Providing a better knowledge access with **Cheat Sheets** and quick reference material and links.
+
+![cp-tips](https://github.com/propilideno/Competitive-Programming-Tips/assets/105776775/ed7a636c-f4dd-4849-8e4f-6fa2e2bc5379)
 
 ## Coding Problems Template :scroll:
 ### Motivation
@@ -23,8 +25,6 @@ bash <(curl -sL bash.propi.dev/cp)
 ```
 bash <(curl -sL bash.propi.dev/upcoming/cp) up
 ```
-
-![cp-tips](https://github.com/propilideno/Competitive-Programming-Tips/assets/105776775/ed7a636c-f4dd-4849-8e4f-6fa2e2bc5379)
 
 ### Running and Debugging :man_technologist:
 After runned `bash script`, you can use **Makefile** to run and debug your coding problems.
