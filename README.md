@@ -40,6 +40,7 @@ make debug-d
 - [C++ Reference](https://hackingcpp.com/cpp/cheat_sheets.html)
 - [Modern C++ Features](https://github.com/AnthonyCalandra/modern-cpp-features)
 - [Competitive Programming](https://github.com/hackslash-nitp/cheat-sheet)
+- [C++ Tricks](https://www.geeksforgeeks.org/c-tricks-competitive-programming-c-11)
 - [Data Structures and Algorithms](https://dev.to/iuliagroza/complete-introduction-to-the-30-most-essential-data-structures-algorithms-43kd)
 - [75 Common Coding Problems](https://docs.google.com/spreadsheets/d/1awb62Klhzvmx_L0-ncXwItvjkg6Ngwrczx5qYNtCZhs/edit#gid=0)
 
