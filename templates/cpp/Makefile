@@ -1,7 +1,7 @@
 run-%:
-	g++ $*.cpp
+	g++ -O2 -Wall $*.cpp
 	./a.out < input/$*.txt
 
 debug-%:
-	g++ -g $*.cpp
+	g++ -g -02 -Wall $*.cpp
 	gdb -ex "run < input/$*.txt" ./a.out
