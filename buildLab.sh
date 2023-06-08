@@ -11,9 +11,39 @@ selectBranch(){
 	fi
 }
 
+selectTemplate(){
+	while true; do
+		echo "=== Select your C++ Template ==="
+		echo "If you don't know what choose, select Basic"
+		echo "1) Basic"
+		echo "2) Standard"
+		echo "3) Complex"
+		echo "Select desired template: "
+		read -r choice
+		case "$choice" in
+			1)
+				template="basic"
+				break
+			;;
+			2)
+				template="standard"
+				break
+			;;
+			3)
+				template="complex"
+				break
+			;;
+			*)
+				echo "<Invalid Choice> Please, select a valid option"
+			;;
+		esac
+	done
+}
+
 settings(){
 	selectBranch $1
-	solutionTemplate=$(curl -s https://raw.githubusercontent.com/propilideno/Competitive-Programming-Tips/$branch/templates/cpp/basic.cpp)
+	selectTemplate
+	solutionTemplate=$(curl -s https://raw.githubusercontent.com/propilideno/Competitive-Programming-Tips/$branch/templates/cpp/$template.cpp)
 	makefileTemplate=$(curl -s https://raw.githubusercontent.com/propilideno/Competitive-Programming-Tips/$branch/templates/cpp/Makefile)
 }
 
