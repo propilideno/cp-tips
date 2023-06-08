@@ -1,6 +1,8 @@
 # Competitive Programming Tips :ninja::dart:
 [ [**:scroll: Templates :scroll:**](#filling-folder-with-cpp-txt-and-makefile-mag_right) | [Usage Example](#running-and-debugging-man_technologist) | [:page_facing_up: Cheat Sheets :page_facing_up:](#cheat-sheets-and-references-page_facing_up) ]
 
+![image](https://github.com/propilideno/Competitive-Programming-Tips/assets/105776775/dac8ee0c-9419-4bcb-bfd9-bad8f02f6a7c)
+
 C++ Competitive Programming tips to **improve your thinking speed**, making your life much easier.
 - You'll be able to **quickstart** your coding problems.
 - Improving your **productivity** while solving coding problems by using our **templates.**
