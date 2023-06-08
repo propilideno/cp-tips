@@ -15,9 +15,9 @@ selectTemplate(){
 	while true; do
 		echo "=== Select your C++ Template ==="
 		echo "If you don't know what choose, select Basic"
-		echo "1) Basic"
-		echo "2) Standard"
-		echo "3) Complex"
+		echo "1) Basic - 24 lines"
+		echo "2) Standard - 35 lines"
+		echo "3) Complex - 54 lines"
 		echo "Select desired template: "
 		read -r choice
 		case "$choice" in
