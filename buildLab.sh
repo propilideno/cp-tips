@@ -1,6 +1,6 @@
 #!/bin/bash
 
-function selectBranch(){
+selectBranch(){
 	branch="main" #Default Branch
 	if [[ $# != 0 ]]; then
 		if [[ $1 != "$branch" && "$1" == "up" ]]; then
@@ -11,18 +11,18 @@ function selectBranch(){
 	fi
 }
 
-function settings(){
+settings(){
 	selectBranch $1
 	solutionTemplate=$(curl -s https://raw.githubusercontent.com/propilideno/Competitive-Programming-Tips/$branch/templates/cpp/basic.cpp)
 	makefileTemplate=$(curl -s https://raw.githubusercontent.com/propilideno/Competitive-Programming-Tips/$branch/templates/cpp/Makefile)
 }
 
-function chr() {
+chr() {
 	local ascii_Value=$(awk -v v="$1" 'BEGIN{printf "%c", v}')
 	echo "$ascii_Value"
 }
 
-function createFiles(){
+createFiles(){
 	read -p "Type filename: " fileName
 	read -p "Type number of questions: " numberOf_Questions
     mkdir $fileName
@@ -36,7 +36,7 @@ function createFiles(){
     done
 }
 
-function exit_failure(){
+exit_failure(){
 	echo "Something got wrong! Check our current documentation in: https://propi.dev/cp"
 	if [[ $# != 0 ]]; then
 		echo "<ERROR> $1"
@@ -44,7 +44,7 @@ function exit_failure(){
 	exit 1
 }
 
-function greetings(){
+greetings(){
     printf "\n==> All files was created with SUCCESS !!!\n"
     echo "==> Contribute with us giving this repo a Star ⭐"
     echo "Maintainers:"
@@ -54,7 +54,7 @@ function greetings(){
     exit 1
 }
 
-function main(){
+main(){
 	settings $1
 	createFiles
 	greetings
