@@ -11,14 +11,19 @@ selectBranch(){
 	fi
 }
 
+gray() {
+    echo -e "\e[90m${1}\e[0m"
+}
+
 selectTemplate(){
 	while true; do
-		echo -e "=== Select your \e[32mC++ Template\e[0m ==="
+		echo -e "\e[90m=========\e[0m Select your \e[32mC++ Template\e[0m \e[90m=========\e[0m"
 		echo -e "If you don't know what choose, select \e[32mBasic\e[0m"
 		echo -e "\e[32m1\e[0m) \e[32mBasic\e[0m - 24 lines"
 		echo -e "\e[33m2\e[0m) \e[33mStandard\e[0m - 35 lines"
 		echo -e "\e[31m3\e[0m) \e[31mComplex\e[0m - 54 lines"
-		echo "Select desired template: "
+		gray "============================================"
+		echo -n "My choice is: "
 		read -r choice
 		case "$choice" in
 			1)
