@@ -1,6 +1,8 @@
 # Competitive Programming Tips :ninja::dart:
 [ [**:scroll: Templates :scroll:**](#filling-folder-with-cpp-txt-and-makefile-mag_right) | [Compile Example](#running-and-debugging-man_technologist) | [Usage Example](#template-usage) | [:page_facing_up: Cheat Sheets :page_facing_up:](#cheat-sheets-and-references-page_facing_up) ]
 
+Try it now in your terminal: `bash <(curl -sL bash.propi.dev/cp)`
+
 ![image](https://github.com/propilideno/Competitive-Programming-Tips/assets/105776775/dac8ee0c-9419-4bcb-bfd9-bad8f02f6a7c)
 
 C++ Competitive Programming tips to **improve your thinking speed**, making your life much easier.
