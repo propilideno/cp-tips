@@ -1,5 +1,5 @@
 # Competitive Programming Tips :ninja::dart:
-[ [**:scroll: Templates :scroll:**](#filling-folder-with-cpp-txt-and-makefile-mag_right) | [Usage Example](#running-and-debugging-man_technologist) | [:page_facing_up: Cheat Sheets :page_facing_up:](#cheat-sheets-and-references-page_facing_up) ]
+[ [**:scroll: Templates :scroll:**](#filling-folder-with-cpp-txt-and-makefile-mag_right) | [Compile Example](#running-and-debugging-man_technologist) | [Usage Example](#template-usage) | [:page_facing_up: Cheat Sheets :page_facing_up:](#cheat-sheets-and-references-page_facing_up) ]
 
 ![image](https://github.com/propilideno/Competitive-Programming-Tips/assets/105776775/dac8ee0c-9419-4bcb-bfd9-bad8f02f6a7c)
 
@@ -32,11 +32,19 @@ bash <(curl -sL bash.propi.dev/upcoming/cp) up
 After runned `bash script`, you can use **Makefile** to run and debug your coding problems.
 ![image2](https://github.com/propilideno/Competitive-Programming-Tips/assets/105776775/24fbb977-bdee-425c-8f45-e27cdea67191)
 
-Example of usage if you want to **run** or **debug** coding problem D:
+Example of usage if you want to **run**, **debug**, **gdb** coding problem D:
 ```
-make run-d
-make debug-d
+make run-d        // Run with minimum compile flags 
+make debug-d      // Run with a lot of compile flags
+make gdb-d        // Run with gdb
 ```
+
+### Template usage
+Using **standard** or **complex** templates, you can write less for the same solution
+
+![image](https://github.com/propilideno/Competitive-Programming-Tips/assets/105776775/64f5749f-76ee-4801-bcc4-3f526dc0e25d)
+![Usage2](https://github.com/propilideno/Competitive-Programming-Tips/assets/105776775/be5fab9d-f6ad-421d-b725-63deaaed7659)
+
 
 ## Cheat Sheets and References :page_facing_up:
 - [C++ Reference](https://hackingcpp.com/cpp/cheat_sheets.html)
