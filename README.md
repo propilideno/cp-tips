@@ -13,10 +13,13 @@ C++ Competitive Programming tips to **improve your thinking speed**, making your
 ![cp-tips](https://github.com/propilideno/Competitive-Programming-Tips/assets/105776775/ed7a636c-f4dd-4849-8e4f-6fa2e2bc5379)
 
 ## Coding Problems Template :scroll:
-### Motivation
+<details>
+<summary> Motivation behind `buildLab.sh`</summary>
+
 ![image](https://github.com/propilideno/Competitive-Programming-Tips/assets/105776775/8d2599ac-167f-47ca-8789-3c7627996e73)
 
 If you have to do lots of exercise and rewrite every single template, you don't need to do this anymore. With our templates, you can fill a folder with usefull files, perfect for your job.
+</details>
 
 ### Filling folder with `.cpp`, `.txt` and `Makefile` :mag_right:
 Open the `terminal` and type:
