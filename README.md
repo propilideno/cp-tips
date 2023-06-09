@@ -1,5 +1,7 @@
 # Competitive Programming Tips :ninja::dart:
-[ [**:scroll: Templates :scroll:**](#filling-folder-with-cpp-txt-and-makefile-mag_right) | [Usage Example](#running-and-debugging-man_technologist) | [:page_facing_up: Cheat Sheets :page_facing_up:](#cheat-sheets-and-references-page_facing_up) ]
+[ [**:scroll: Templates :scroll:**](#filling-folder-with-cpp-txt-and-makefile-mag_right) | [Compile Example](#running-and-debugging-man_technologist) | [Usage Example](#template-usage) | [:page_facing_up: Cheat Sheets :page_facing_up:](#cheat-sheets-and-references-page_facing_up) ]
+
+![image](https://github.com/propilideno/Competitive-Programming-Tips/assets/105776775/dac8ee0c-9419-4bcb-bfd9-bad8f02f6a7c)
 
 C++ Competitive Programming tips to **improve your thinking speed**, making your life much easier.
 - You'll be able to **quickstart** your coding problems.
@@ -30,16 +32,25 @@ bash <(curl -sL bash.propi.dev/upcoming/cp) up
 After runned `bash script`, you can use **Makefile** to run and debug your coding problems.
 ![image2](https://github.com/propilideno/Competitive-Programming-Tips/assets/105776775/24fbb977-bdee-425c-8f45-e27cdea67191)
 
-Example of usage if you want to **run** or **debug** coding problem D:
+Example of usage if you want to **run**, **debug**, **gdb** coding problem D:
 ```
-make run-d
-make debug-d
+make run-d        // Run with minimum compile flags 
+make debug-d      // Run with a lot of compile flags
+make gdb-d        // Run with gdb
 ```
+
+### Template usage
+Using **standard** or **complex** templates, you can write less for the same solution
+
+![image](https://github.com/propilideno/Competitive-Programming-Tips/assets/105776775/64f5749f-76ee-4801-bcc4-3f526dc0e25d)
+![Usage2](https://github.com/propilideno/Competitive-Programming-Tips/assets/105776775/be5fab9d-f6ad-421d-b725-63deaaed7659)
+
 
 ## Cheat Sheets and References :page_facing_up:
 - [C++ Reference](https://hackingcpp.com/cpp/cheat_sheets.html)
 - [Modern C++ Features](https://github.com/AnthonyCalandra/modern-cpp-features)
 - [Competitive Programming](https://github.com/hackslash-nitp/cheat-sheet)
+- [C++ Tricks](https://www.geeksforgeeks.org/c-tricks-competitive-programming-c-11)
 - [Data Structures and Algorithms](https://dev.to/iuliagroza/complete-introduction-to-the-30-most-essential-data-structures-algorithms-43kd)
 - [75 Common Coding Problems](https://docs.google.com/spreadsheets/d/1awb62Klhzvmx_L0-ncXwItvjkg6Ngwrczx5qYNtCZhs/edit#gid=0)
 

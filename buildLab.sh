@@ -1,6 +1,6 @@
 #!/bin/bash
 
-function selectBranch(){
+selectBranch(){
 	branch="main" #Default Branch
 	if [[ $# != 0 ]]; then
 		if [[ $1 != "$branch" && "$1" == "up" ]]; then
@@ -11,18 +11,53 @@ function selectBranch(){
 	fi
 }
 
-function settings(){
+gray() {
+    echo -e "\e[90m${1}\e[0m"
+}
+
+selectTemplate(){
+	while true; do
+		echo -e "\e[90m=========\e[0m Select your \e[32mC++ Template\e[0m \e[90m=========\e[0m"
+		echo -e "If you don't know what choose, select \e[32mBasic\e[0m"
+		echo -e "\e[32m1\e[0m) \e[32mBasic\e[0m - 24 lines"
+		echo -e "\e[33m2\e[0m) \e[33mStandard\e[0m - 35 lines"
+		echo -e "\e[31m3\e[0m) \e[31mComplex\e[0m - 54 lines"
+		gray "============================================"
+		echo -n "My choice is: "
+		read -r choice
+		case "$choice" in
+			1)
+				template="basic"
+				break
+			;;
+			2)
+				template="standard"
+				break
+			;;
+			3)
+				template="complex"
+				break
+			;;
+			*)
+				echo -e "\e[31m<Invalid Choice>\e[0m Please, select a valid option"
+			;;
+		esac
+	done
+}
+
+settings(){
 	selectBranch $1
-	solutionTemplate=$(curl -s https://raw.githubusercontent.com/propilideno/Competitive-Programming-Tips/$branch/templates/cpp/basic.cpp)
+	selectTemplate
+	solutionTemplate=$(curl -s https://raw.githubusercontent.com/propilideno/Competitive-Programming-Tips/$branch/templates/cpp/$template.cpp)
 	makefileTemplate=$(curl -s https://raw.githubusercontent.com/propilideno/Competitive-Programming-Tips/$branch/templates/cpp/Makefile)
 }
 
-function chr() {
+chr() {
 	local ascii_Value=$(awk -v v="$1" 'BEGIN{printf "%c", v}')
 	echo "$ascii_Value"
 }
 
-function createFiles(){
+createFiles(){
 	read -p "Type filename: " fileName
 	read -p "Type number of questions: " numberOf_Questions
     mkdir $fileName
@@ -36,7 +71,7 @@ function createFiles(){
     done
 }
 
-function exit_failure(){
+exit_failure(){
 	echo "Something got wrong! Check our current documentation in: https://propi.dev/cp"
 	if [[ $# != 0 ]]; then
 		echo "<ERROR> $1"
@@ -44,7 +79,7 @@ function exit_failure(){
 	exit 1
 }
 
-function greetings(){
+greetings(){
     printf "\n==> All files was created with SUCCESS !!!\n"
     echo "==> Contribute with us giving this repo a Star ⭐"
     echo "Maintainers:"
@@ -54,7 +89,7 @@ function greetings(){
     exit 1
 }
 
-function main(){
+main(){
 	settings $1
 	createFiles
 	greetings
