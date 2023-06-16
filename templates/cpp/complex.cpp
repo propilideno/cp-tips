@@ -6,8 +6,6 @@
 #define __(x) {cout << #x << " = " << x << " | ";} //Print without endl
 #define _vec(x) {cout << #x << " = "; for(int i : x){cout << i << " ";} cout << endl;} //Print entire vector
 #define _pair(x) {cout << #x << " = | " << "1st: " << x.first << " | " << "2nd: " << x.second << endl;} //Print pair
-#define dbgs(x) cerr << (#x) << " --> " << (x) << ' '
-#define dbg(x) cerr << (#x) << " --> " << (x) << endl
 //Constants
 const double PI = acos(-1); //PI
 const double E = 1e-8; //Small Number
