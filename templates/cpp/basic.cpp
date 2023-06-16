@@ -6,6 +6,8 @@
 #define _vec(x) {cout << #x << " = "; for(int i : x){cout << i << " ";} cout << endl;} //Print entire vector
 //Constants
 const double PI = acos(-1);
+//IO Optimization
+#define SpeedUP ios_base::sync_with_stdio(false); //If false, don't use stdio and iostream at the same time
 //Types
 using namespace std;
 typedef long long ll;
@@ -15,7 +17,7 @@ typedef std::vector<ll> vll;
 // ###################################################################################################### //
 
 int main(){
-	ios::sync_with_stdio(false); //If false, don't use stdio and iostream at the same time
+	//SpeedUP; //Uncomment for a faster runtime
 	string line;
 	while(getline(cin,line)){
 		cout << line << endl;

@@ -19,9 +19,9 @@ selectTemplate(){
 	while true; do
 		echo -e "\e[90m=========\e[0m Select your \e[32mC++ Template\e[0m \e[90m=========\e[0m"
 		echo -e "If you don't know what choose, select \e[32mBasic\e[0m"
-		echo -e "\e[32m1\e[0m) \e[32mBasic\e[0m - 24 lines"
+		echo -e "\e[32m1\e[0m) \e[32mBasic\e[0m - 26 lines"
 		echo -e "\e[33m2\e[0m) \e[33mStandard\e[0m - 35 lines"
-		echo -e "\e[31m3\e[0m) \e[31mComplex\e[0m - 54 lines"
+		echo -e "\e[31m3\e[0m) \e[31mComplex\e[0m - 53 lines"
 		gray "============================================"
 		echo -n "My choice is: "
 		read -r choice
@@ -48,8 +48,10 @@ selectTemplate(){
 settings(){
 	selectBranch $1
 	selectTemplate
+	printf "\nDownloading template ...\n"
 	solutionTemplate=$(curl -s https://raw.githubusercontent.com/propilideno/Competitive-Programming-Tips/$branch/templates/cpp/$template.cpp)
 	makefileTemplate=$(curl -s https://raw.githubusercontent.com/propilideno/Competitive-Programming-Tips/$branch/templates/cpp/Makefile)
+	printf "Complete!\n\n"
 }
 
 chr() {
