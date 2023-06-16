@@ -26,7 +26,7 @@ typedef std::pair <ll, ll> pll;
 // ###################################################################################################### //
 
 int main(){
-	SpeedUP;
+	//SpeedUP; //Uncomment for a faster runtime
 	string line;
 	while(getline(cin,line)){
 		cout << line << endl;
