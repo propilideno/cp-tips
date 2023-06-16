@@ -18,8 +18,8 @@ const int INF_P = (INF_N+1)*(-1); //Max_INT
 #define ff first
 #define ss second
 //loops
-#define f(i,n) for(int i=0;i<n;i++)
-#define rf(i,n) for(int i=n;i>=0;i--)
+#define f(i,n) for(int i=0;i<n;i++) //From 0 to n-1
+#define rf(i,n) for(int i=n-1;i>=0;i--) //From n-1 to 0
 #define F(i,a,b) for(int i=a;i<b;i++)
 #define RF(i,a,b) for(int i=a;i>=b;i--)
 #define FOR(it,c) for ( __typeof((c).begin()) it=(c).begin(); it!=(c).end(); it++ )

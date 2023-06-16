@@ -13,8 +13,8 @@ const int INF_P = (INF_N+1)*(-1); //Max_INT
 //IO Optimization
 #define SpeedUP ios_base::sync_with_stdio(0);cin.tie(0);cout.tie(0) //IO optimization
 //Loops
-#define f(i,n) for(int i=0;i<n;i++) //For from 0 to n
-#define rf(i,n) for(int i=n;i>=0;i--) //For from n to 0
+#define f(i,n) for(int i=0;i<n;i++) //For from 0 to n-1
+#define rf(i,n) for(int i=n-1;i>=0;i--) //For from n-1 to 0
 //Types
 using namespace std;
 typedef long long ll;
