@@ -54,8 +54,8 @@ Using **standard** or **complex** templates, you can write less for the same sol
 ## Cheat Sheets and References :page_facing_up:
 - [Best C++ CheatSheet](https://hackingcpp.com/cpp/cheat_sheets.html): The most complete and the best C++ CheatSheet
 - [Data Structures and Algorithms](https://dev.to/iuliagroza/complete-introduction-to-the-30-most-essential-data-structures-algorithms-43kd): 30 most essential Data Structures and Algorithms
-- [C++ Reference](https://cplusplus.com/reference/): When searching, if you want example of usage click in constructor.
 - [Test Cases](https://www.udebug.com/): Site with test cases for lots of coding problems.
+- [C++ Reference](https://cplusplus.com/reference/): When searching, if you want example of usage click in constructor.
 - [C++ Tricks](https://www.geeksforgeeks.org/c-tricks-competitive-programming-c-11): Some C++ tricks, usefull for Competitive Programming
 - [Modern C++ Features](https://github.com/AnthonyCalandra/modern-cpp-features): Learn the difference between C++ versions here. Like C++11, C++17.
 - [CP Algorithms CheatSheet](https://github.com/hackslash-nitp/cheat-sheet): Usefull reference for Competitive Programming Problems.
