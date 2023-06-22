@@ -79,14 +79,15 @@ int main(){
 
 /* ################################################################################################## */
 
+// DFS: dbfs<stack,int>(G,v,visited)  || BFS: dbfs<queue,int>(G,v,visited)
 template <template<typename...> class Container, typename T>
 void dbfs(Graph& G, int v, vector<bool>& visited) {
-    Container<T> arr;
-    arr.push(v);
-    visited[v] = true;
+    Container<T> arr; arr.push(v); visited[v] = true;
 
     while (!arr.empty()) {
-        v = arr.top(); arr.pop();
+		if constexpr(is_same<Container<T>, stack<typename Container<T>::value_type>>::value) {
+			v = arr.top(); // Use top if using std::stack
+		} else { v = arr.front(); } arr.pop(); // front if std::queue
         cout << v << " ";
 
         for (int w : G.adj[v]) {
