@@ -46,8 +46,22 @@ typedef std::map<int, int> mii;
 typedef std::map<ll, ll> mll;
 typedef std::pair<int, int> pii;
 typedef std::pair<std::string, int> psi;
-// Template Functions
-template <class T> using pqg = priority_queue<T, vector<T>, greater<T>>;
+// Custom Data Structs
+struct Graph {
+    int n; vector<vector<int>> adj;
+
+    Graph(int n) : n(n) { adj.resize(n); }
+
+    void addEdge(int u, int v) {
+        adj[u].push_back(v);
+        adj[v].push_back(u);
+    }
+};
+// HEADERS
+template <class T> using pqg = priority_queue<T, vector<T>, greater<T>>; //Min Heap
+struct Graph; //Graph with adjacency list
+template <template<typename...> class Container, typename T> // DFS: dbfs<stack,int>(G,v,visited)
+void dbfs(Graph& G, int v, vector<bool>& visited);			 // BFS: dbfs<queue,int>(G,v,visited)
 
 /* ################################################################################################## */
 
@@ -65,19 +79,6 @@ int main(){
 
 /* ################################################################################################## */
 
-// Adjascent List
-struct Graph {
-    int n; vector<vector<int>> adj;
-
-    Graph(int n) : n(n) { adj.resize(n); }
-
-    void addEdge(int u, int v) {
-        adj[u].push_back(v);
-        adj[v].push_back(u);
-    }
-};
-
-// DFS: dbfs<stack,int>(G,v,visited)  || BFS: dbfs<queue,int>(G,v,visited)
 template <template<typename...> class Container, typename T>
 void dbfs(Graph& G, int v, vector<bool>& visited) {
     Container<T> arr;
@@ -85,8 +86,7 @@ void dbfs(Graph& G, int v, vector<bool>& visited) {
     visited[v] = true;
 
     while (!arr.empty()) {
-        v = arr.top();
-        arr.pop();
+        v = arr.top(); arr.pop();
         cout << v << " ";
 
         for (int w : G.adj[v]) {
