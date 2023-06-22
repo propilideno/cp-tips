@@ -11,9 +11,11 @@
 const auto beg = std::chrono::high_resolution_clock::now(); //Begining of the program
 const double PI = acos(-1); //PI
 const double E = 1e-8; //Small Number
-const int INF_N = (2 << 30); //Min_INT
-const int INF_P = (INF_N+1)*(-1); //Max_INT
+const int INF_P = 0x3f3f3f3f; // Maximum positive integer that don't cause overflow when doubled
+const int INF_N = 0xcfcfcfcf; // Minimum negative integer that don't cause underflow when doubled
+const int MOD = 1e9+7; // Util with mod operations (prime number)
 //Shortened Methods
+#define ms(arr,val) memset(arr,val,sizeof(arr))
 #define sz(x) ((int)(x).size())
 #define pb push_back
 #define mp make_pair
@@ -26,6 +28,7 @@ const int INF_P = (INF_N+1)*(-1); //Max_INT
 #define RF(i,a,b) for(int i=a;i>=b;i--)
 #define FOR(it,c) for ( __typeof((c).begin()) it=(c).begin(); it!=(c).end(); it++ )
 #define RFOR(it,c) for ( __typeof((c).rbegin()) it=(c).rbegin(); it!=(c).rend(); it++ )
+#define REP(it,c) for ( __typeof((c).begin()) it=(c).begin(); it!=(c).end();)
 #define all(c) c.begin(), c.end()
 #define rall(c) c.rbegin(), c.rend()
 //IO Optimization
