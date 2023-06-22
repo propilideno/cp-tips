@@ -60,3 +60,39 @@ int main(){
 }
 
 
+/* ################################################################################################## */
+
+// Adjascent List
+struct Graph {
+    int n; vector<vector<int>> adj;
+
+    Graph(int n) : n(n) { adj.resize(n); }
+
+    void addEdge(int u, int v) {
+        adj[u].push_back(v);
+        adj[v].push_back(u);
+    }
+};
+
+// DFS: dbfs<stack,int>(G,v,visited)  || BFS: dbfs<queue,int>(G,v,visited)
+template <template<typename...> class Container, typename T>
+void dbfs(Graph& G, int v, vector<bool>& visited) {
+    Container<T> arr;
+    arr.push(v);
+    visited[v] = true;
+
+    while (!arr.empty()) {
+        v = arr.top();
+        arr.pop();
+        cout << v << " ";
+
+        for (int w : G.adj[v]) {
+            if (!visited[w]) {
+                arr.push(w);
+                visited[w] = true;
+            }
+        }
+    }
+}
+
+/* ########################## Template available in: https://propi.dev/cp  ########################## */
