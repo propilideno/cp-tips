@@ -49,13 +49,13 @@ typedef std::pair<std::string, int> psi;
 //IO Optimization
 #define SpeedUP ios_base::sync_with_stdio(0);cin.tie(0);cout.tie(0);
 // Custom Data Structs
-struct Graph {
+struct Graph { // Call like: Graph G(n); G.addEdge(u,v);
     int n; vector<vector<int>> adj; Graph(int n) : n(n) { adj.resize(n); }
     void addEdge(int u, int v) { adj[u].push_back(v); adj[v].push_back(u); }
 };
 // HEADERS
 template <class T> using pqg = priority_queue<T, vector<T>, greater<T>>; //Min Heap
-struct Graph; //Graph with adjacency list
+struct Graph; //Graph with adjacency list					 // vector <bool> visited(n,false);
 template <template<typename...> class Container, typename T> // DFS: dbfs<stack,int>(G,v,visited)
 void dbfs(Graph& G, int v, vector<bool>& visited);			 // BFS: dbfs<queue,int>(G,v,visited)
 
@@ -75,7 +75,6 @@ int main(){
 
 /* ################################################################################################## */
 
-// DFS: dbfs<stack,int>(G,v,visited)  || BFS: dbfs<queue,int>(G,v,visited)
 template <template<typename...> class Container, typename T>
 void dbfs(Graph& G, int v, vector<bool>& visited) {
     Container<T> arr; arr.push(v); visited[v] = true;
