@@ -43,6 +43,9 @@ typedef std::map<int, int> mii;
 typedef std::map<ll, ll> mll;
 typedef std::pair<int, int> pii;
 typedef std::pair<std::string, int> psi;
+// Template Functions
+template <class T> using pqg = priority_queue<T, vector<T>, greater<T>>;
+
 /* ################################################################################################## */
 
 
