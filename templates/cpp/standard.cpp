@@ -5,13 +5,16 @@
 #define __(x) {cout << #x << " = " << x << " | ";} //Print without endl
 #define _vec(x) {cout << #x << " = "; for(int i : x){cout << i << " ";} cout << endl;} //Print entire vector
 #define _pair(x) {cout << #x << " = | " << "1st: " << x.first << " | " << "2nd: " << x.second << endl;} //Print pair
+#define __time__ { auto duration = chrono::duration<double>( \
+std::chrono::high_resolution_clock::now() - beg); cout<<"Time: "<<duration.count()<<endl;}
 //Constants
+const auto beg = std::chrono::high_resolution_clock::now(); //Begining of the program
 const double PI = acos(-1); //PI
-const double E = 1e-8; //Small Number
-const int INF_N = (2 << 30); //Min_INT
-const int INF_P = (INF_N+1)*(-1); //Max_INT
+const double E = 1e-8; //Small Number (10^-8)
+const int INF_P = 0x3f3f3f3f; //Max positive integer that don't cause overflow when doubled
+const int INF_N = 0xcfcfcfcf; //Min negative integer that don't cause underflow when doubled
 //IO Optimization
-#define SpeedUP ios_base::sync_with_stdio(0);cin.tie(0);cout.tie(0) //IO optimization
+#define __SpeedUP__ ios_base::sync_with_stdio(0);cin.tie(0);cout.tie(0);
 //Loops
 #define f(i,n) for(int i=0;i<n;i++) //For from 0 to n-1
 #define rf(i,n) for(int i=n-1;i>=0;i--) //For from n-1 to 0
@@ -26,10 +29,11 @@ typedef std::pair <ll, ll> pll;
 // ###################################################################################################### //
 
 int main(){
-	//SpeedUP; //Uncomment for a faster runtime
+	// __SpeedUP__ //Uncomment for a faster runtime
 	string line;
 	while(getline(cin,line)){
 		cout << line << endl;
 	}
 
+	// __time__ //Uncomment for show runtime
 }

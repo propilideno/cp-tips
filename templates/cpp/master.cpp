@@ -7,15 +7,14 @@
 #define _vec(x) {cout << #x << " = "; for(int i : x){cout << i << " ";} cout << endl;} //Print entire vector
 #define _pair(x) {cout << #x << " = | " << "1st: " << x.first << " | " << "2nd: " << x.second << endl;} //Print pair
 #define __time__ { auto duration = chrono::duration<double>( \
-std::chrono::high_resolution_clock::now() - beg);\
-cout<<"Time: "<<duration.count()<<endl;}
+std::chrono::high_resolution_clock::now() - beg); cout<<"Time: "<<duration.count()<<endl;}
 //Constants
 const auto beg = std::chrono::high_resolution_clock::now(); //Begining of the program
 const double PI = acos(-1); //PI
-const double E = 1e-8; //Small Number
-const int INF_P = 0x3f3f3f3f; // Maximum positive integer that don't cause overflow when doubled
-const int INF_N = 0xcfcfcfcf; // Minimum negative integer that don't cause underflow when doubled
-const int MOD = 1e9+7; // Mod operations (prime number)
+const double E = 1e-8; //Small Number (10^-8)
+const int INF_P = 0x3f3f3f3f; //Max positive integer that don't cause overflow when doubled
+const int INF_N = 0xcfcfcfcf; //Min negative integer that don't cause underflow when doubled
+const int MOD = 1e9+7; //Mod operations (prime number)
 //Shortened Methods
 #define pb push_back
 #define mp make_pair
@@ -56,8 +55,8 @@ struct Graph { // Call like: Graph G(n); G.addEdge(u,v);
 	void removeEdge(int u, int v) { adj[u].erase(v); adj[v].erase(u); }
 };
 // HEADERS
-template <class T> using pqg = priority_queue<T, vector<T>, greater<T>>; //Min Heap
 struct Graph; //Graph with adjacency list					 // vector <bool> visited(n,false);
+template <class T> using pqg = priority_queue<T, vector<T>, greater<T>>; //Min Heap
 template <template<typename...> class Container, typename T> // DFS: dbfs<stack,int>(G,v,visited)
 void dbfs(Graph& G, int v, vector<bool>& visited);			 // BFS: dbfs<queue,int>(G,v,visited)
 
