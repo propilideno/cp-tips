@@ -42,6 +42,7 @@ Example of usage if you want to **run**, **debug**, **gdb** coding problem D:
 make run-d        // Run with minimum compile flags 
 make debug-d      // Run with a lot of compile flags
 make gdb-d        // Run with gdb
+make valgrind-d   // Run with valgrind
 ```
 
 ### Template usage
