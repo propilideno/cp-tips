@@ -15,10 +15,8 @@ const double PI = acos(-1); //PI
 const double E = 1e-8; //Small Number
 const int INF_P = 0x3f3f3f3f; // Maximum positive integer that don't cause overflow when doubled
 const int INF_N = 0xcfcfcfcf; // Minimum negative integer that don't cause underflow when doubled
-const int MOD = 1e9+7; // Util with mod operations (prime number)
+const int MOD = 1e9+7; // Mod operations (prime number)
 //Shortened Methods
-#define ms(arr,val) memset(arr,val,sizeof(arr))
-#define sz(x) ((int)(x).size())
 #define pb push_back
 #define mp make_pair
 #define ff first
@@ -46,6 +44,8 @@ typedef std::pair<std::string, int> psi;
 #define REP(it,c) for ( __typeof((c).begin()) it=(c).begin(); it!=(c).end();)
 #define all(c) c.begin(), c.end()
 #define rall(c) c.rbegin(), c.rend()
+#define sz(x) ((int)(x).size())
+#define ms(arr,val) memset(arr,val,sizeof(arr))
 //IO Optimization
 #define __SpeedUP__ ios_base::sync_with_stdio(0);cin.tie(0);cout.tie(0);
 // Custom Data Structs
@@ -65,12 +65,12 @@ void dbfs(Graph& G, int v, vector<bool>& visited);			 // BFS: dbfs<queue,int>(G,
 
 
 int main(){
-	//SpeedUP; //Uncomment for a faster runtime
+	// __SpeedUP__ //Uncomment for a faster runtime
 	string line;
 	while(getline(cin,line)){
 		cout << line << endl;
 	}
-	
+
 	// __time__ //Uncomment for show runtime
 }
 
@@ -86,12 +86,11 @@ void dbfs(Graph& G, int v, vector<bool>& visited) {
 			v = arr.top(); // Use top if using std::stack
 		} else { v = arr.front(); } arr.pop(); // front if std::queue
 		
-        cout << v << " ";
+        cout << v << " "; // Do something with v
 
-        for (int w : G.adj[v]) {
+        for (int w : G.adj[v]) { // For each unvisited neighbor of v
             if (!visited[w]) {
-                arr.push(w);
-                visited[w] = true;
+                arr.push(w); visited[w] = true;
             }
         }
     } cout << endl;
