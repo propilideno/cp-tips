@@ -3,7 +3,7 @@
 
 Try it now in your terminal: `bash <(curl -sL bash.propi.dev/cp)`
 
-![image](https://github.com/propilideno/Competitive-Programming-Tips/assets/105776775/738d3fc3-0e16-4942-b540-3c5c5e6f1156)
+![image](https://github.com/propilideno/Competitive-Programming-Tips/assets/105776775/20ab9764-fdfa-4051-97f4-a8f9a9e48f8e)
 
 
 C++ Competitive Programming tips to **improve your thinking speed**, making your life much easier.
