@@ -2,8 +2,7 @@
 < Give us a brief description >
 
 ## Changes Made
-- 
-- 
+${{ COMMITS }}
 
 ## Fixed Issues
 - None

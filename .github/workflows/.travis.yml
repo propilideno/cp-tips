@@ -1,0 +1,6 @@
+language: python
+
+script:
+  - |
+    COMMITS=$(git log --format=%s origin/master..HEAD)
+    sed -i "s|\${{ COMMITS }}|$COMMITS|" PULL_REQUEST_TEMPLATE.md
