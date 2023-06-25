@@ -22,6 +22,7 @@ selectTemplate(){
 		echo -e "\e[32m1\e[0m) \e[32mBasic\e[0m - 26 lines"
 		echo -e "\e[33m2\e[0m) \e[33mStandard\e[0m - 35 lines"
 		echo -e "\e[31m3\e[0m) \e[31mComplex\e[0m - 53 lines"
+		echo -e "\e[95m4\e[1m) \e[95mMaster\e[0m - 99 lines"
 		gray "============================================"
 		echo -n "My choice is: "
 		read -r choice
@@ -36,6 +37,10 @@ selectTemplate(){
 			;;
 			3)
 				template="complex"
+				break
+			;;
+			4)
+				template="master"
 				break
 			;;
 			*)
