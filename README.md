@@ -1,11 +1,11 @@
 # Competitive Programming Tips :ninja::dart:
-[![Security Check](https://github.com/propilideno/Competitive-Programming-Tips/actions/workflows/link-integrity-check.yml/badge.svg)](https://github.com/propilideno/Competitive-Programming-Tips/actions/workflows/link-integrity-check.yml) [![Release](https://img.shields.io/github/release/propilideno/Competitive-Programming-Tips.svg)](https://github.com/propilideno/Competitive-Programming-Tips/releases/latest) [![Community](https://img.shields.io/badge/CP%20Community%20-Join_us-orange?style=flat-square&logo=c%2B%2B)](https://github.com/propilideno/Competitive-Programming-Tips/discussions/5)
+[![Security Check](https://github.com/propilideno/cp-tips/actions/workflows/link-integrity-check.yml/badge.svg)](https://github.com/propilideno/cp-tips/actions/workflows/link-integrity-check.yml) [![Release](https://img.shields.io/github/release/propilideno/cp-tips.svg)](https://github.com/propilideno/cp-tips/releases/latest) [![Community](https://img.shields.io/badge/CP%20Community%20-Join_us-orange?style=flat-square&logo=c%2B%2B)](https://github.com/propilideno/cp-tips/discussions/5)
 
 [ [**:scroll: Templates :scroll:**](#filling-folder-with-cpp-txt-and-makefile-mag_right) | [Compile Example](#running-and-debugging-man_technologist) | [Usage Example](#template-usage) | [:page_facing_up: Cheat Sheets :page_facing_up:](#cheat-sheets-and-references-page_facing_up) ]
 
 Try it now in your terminal: `bash <(curl -sL bash.propi.dev/cp)`
 
-![image](https://github.com/propilideno/Competitive-Programming-Tips/assets/105776775/20ab9764-fdfa-4051-97f4-a8f9a9e48f8e)
+![image](https://github.com/propilideno/cp-tips/assets/105776775/20ab9764-fdfa-4051-97f4-a8f9a9e48f8e)
 
 
 C++ Competitive Programming tips to **improve your thinking speed**, making your life much easier.
@@ -13,13 +13,13 @@ C++ Competitive Programming tips to **improve your thinking speed**, making your
 - Improving your **productivity** while solving coding problems by using our **templates.**
 - Providing a better knowledge access with **Cheat Sheets** and quick reference material and links.
 
-![cp-tips](https://github.com/propilideno/Competitive-Programming-Tips/assets/105776775/ed7a636c-f4dd-4849-8e4f-6fa2e2bc5379)
+![cp-tips](https://github.com/propilideno/cp-tips/assets/105776775/ed7a636c-f4dd-4849-8e4f-6fa2e2bc5379)
 
 ## Coding Problems Template :scroll:
 <details>
 <summary> Motivation behind `buildLab.sh`</summary>
 
-![image](https://github.com/propilideno/Competitive-Programming-Tips/assets/105776775/8d2599ac-167f-47ca-8789-3c7627996e73)
+![image](https://github.com/propilideno/cp-tips/assets/105776775/8d2599ac-167f-47ca-8789-3c7627996e73)
 
 If you have to do lots of exercise and rewrite every single template, you don't need to do this anymore. With our templates, you can fill a folder with usefull files, perfect for your job.
 </details>
@@ -38,7 +38,7 @@ bash <(curl -sL bash.propi.dev/upcoming/cp) up
 
 ### Running and Debugging :man_technologist:
 After runned `bash script`, you can use **Makefile** to run and debug your coding problems.
-![image2](https://github.com/propilideno/Competitive-Programming-Tips/assets/105776775/24fbb977-bdee-425c-8f45-e27cdea67191)
+![image2](https://github.com/propilideno/cp-tips/assets/105776775/24fbb977-bdee-425c-8f45-e27cdea67191)
 
 Example of usage if you want to **run**, **debug**, **gdb** coding problem D:
 ```
@@ -51,8 +51,8 @@ make valgrind-d   // Run with valgrind
 ### Template usage
 Using **standard** or **complex** templates, you can write less for the same solution
 
-![image](https://github.com/propilideno/Competitive-Programming-Tips/assets/105776775/64f5749f-76ee-4801-bcc4-3f526dc0e25d)
-![Usage2](https://github.com/propilideno/Competitive-Programming-Tips/assets/105776775/be5fab9d-f6ad-421d-b725-63deaaed7659)
+![image](https://github.com/propilideno/cp-tips/assets/105776775/64f5749f-76ee-4801-bcc4-3f526dc0e25d)
+![Usage2](https://github.com/propilideno/cp-tips/assets/105776775/be5fab9d-f6ad-421d-b725-63deaaed7659)
 
 
 ## Cheat Sheets and References :page_facing_up:
