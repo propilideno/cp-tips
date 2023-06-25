@@ -6,7 +6,7 @@
 #define __(x) {cout << #x << " = " << x << " | ";} //Print without endl
 #define _vec(x) {cout << #x << " = "; for(int i : x){cout << i << " ";} cout << endl;} //Print entire vector
 #define _pair(x) {cout << #x << " = | " << "1st: " << x.first << " | " << "2nd: " << x.second << endl;} //Print pair
-#define __time__ { auto duration = chrono::duration<double>( \
+#define __time__ { auto duration = chrono::duration<double>( /* Show runtime */ \
 std::chrono::high_resolution_clock::now() - beg); cout<<"Time: "<<duration.count()<<endl;}
 //Constants
 const auto beg = std::chrono::high_resolution_clock::now(); //Begining of the program
@@ -36,8 +36,8 @@ typedef std::pair<std::string, int> psi;
 //loops
 #define f(i,n) for(int i=0;i<n;i++) //From 0 to n-1
 #define rf(i,n) for(int i=n-1;i>=0;i--) //From n-1 to 0
-#define F(i,a,b) for(int i=a;i<b;i++)
-#define RF(i,a,b) for(int i=a;i>=b;i--)
+#define F(i,a,b) for(int i=a;i<b;i++) // From a to b-1
+#define RF(i,a,b) for(int i=a;i>=b;i--) // From a to b-1
 #define FOR(it,c) for ( __typeof((c).begin()) it=(c).begin(); it!=(c).end(); it++ )
 #define RFOR(it,c) for ( __typeof((c).rbegin()) it=(c).rbegin(); it!=(c).rend(); it++ )
 #define REP(it,c) for ( __typeof((c).begin()) it=(c).begin(); it!=(c).end();)
@@ -55,8 +55,8 @@ struct Graph { // Call like: Graph G(n); G.addEdge(u,v);
 	void removeEdge(int u, int v) { adj[u].erase(v); adj[v].erase(u); }
 };
 // HEADERS
-struct Graph; //Graph with adjacency list					 // vector <bool> visited(n,false);
 template <class T> using pqg = priority_queue<T, vector<T>, greater<T>>; //Min Heap
+struct Graph; //Graph with adjacency list					 // vector <bool> visited(n,false);
 template <template<typename...> class Container, typename T> // DFS: dbfs<stack,int>(G,v,visited)
 void dbfs(Graph& G, int v, vector<bool>& visited);			 // BFS: dbfs<queue,int>(G,v,visited)
 

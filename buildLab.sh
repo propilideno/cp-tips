@@ -54,8 +54,8 @@ settings(){
 	selectBranch $1
 	selectTemplate
 	printf "\nDownloading template ...\n"
-	solutionTemplate=$(curl -s https://raw.githubusercontent.com/propilideno/Competitive-Programming-Tips/$branch/templates/cpp/$template.cpp)
-	makefileTemplate=$(curl -s https://raw.githubusercontent.com/propilideno/Competitive-Programming-Tips/$branch/templates/cpp/Makefile)
+	solutionTemplate=$(curl -s https://raw.githubusercontent.com/propilideno/cp-tips/$branch/templates/cpp/$template.cpp)
+	makefileTemplate=$(curl -s https://raw.githubusercontent.com/propilideno/cp-tips/$branch/templates/cpp/Makefile)
 	printf "Complete!\n\n"
 }
 
