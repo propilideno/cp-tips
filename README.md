@@ -1,4 +1,6 @@
 # Competitive Programming Tips :ninja::dart:
+[![Security Check](https://github.com/propilideno/Competitive-Programming-Tips/actions/workflows/link-integrity-check.yml/badge.svg)](https://github.com/propilideno/Competitive-Programming-Tips/actions/workflows/link-integrity-check.yml) [![Release](https://img.shields.io/github/release/propilideno/Competitive-Programming-Tips.svg)](https://github.com/propilideno/Competitive-Programming-Tips/releases/latest) [![Community](https://img.shields.io/badge/CP%20Community%20-Join_us-orange?style=flat-square&logo=c%2B%2B)](https://github.com/propilideno/Competitive-Programming-Tips/discussions/5)
+
 [ [**:scroll: Templates :scroll:**](#filling-folder-with-cpp-txt-and-makefile-mag_right) | [Compile Example](#running-and-debugging-man_technologist) | [Usage Example](#template-usage) | [:page_facing_up: Cheat Sheets :page_facing_up:](#cheat-sheets-and-references-page_facing_up) ]
 
 Try it now in your terminal: `bash <(curl -sL bash.propi.dev/cp)`
