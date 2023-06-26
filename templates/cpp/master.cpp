@@ -50,7 +50,7 @@ typedef std::pair<std::string, int> psi;
 // Custom Data Structs
 struct Graph { // Call like: Graph G(n); G.addEdge(u,v);
     int n; vector<unordered_set<int>> adj;
-	Graph(int n) : n(n) { adj.resize(n); }
+	Graph(int size) : n(size) { adj.resize(size); }
     void addEdge(int u, int v) { adj[u].insert(v); adj[v].insert(u); }
 	void removeEdge(int u, int v) { adj[u].erase(v); adj[v].erase(u); }
 };
