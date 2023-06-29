@@ -7,6 +7,7 @@
 #define _pair(x) {cout << #x << " = | " << "1st: " << x.first << " | " << "2nd: " << x.second << endl;} //Print pair
 #define __time__ { auto duration = chrono::duration<double>( /* Show runtime */ \
 std::chrono::high_resolution_clock::now() - beg); cout<<"Time: "<<duration.count()<<endl;}
+#define __log__ { std::FILE* file = std::freopen("LOG.txt", "w", stdout); }
 //Constants
 const auto beg = std::chrono::high_resolution_clock::now(); //Begining of the program
 const double PI = acos(-1); //PI
