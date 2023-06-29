@@ -15,7 +15,7 @@ const double E = 1e-8; //Small Number (10^-8)
 const int INF_P = 0x3f3f3f3f; //Max positive integer that don't cause overflow when doubled
 const int INF_N = 0xcfcfcfcf; //Min negative integer that don't cause underflow when doubled
 //IO Optimization
-#define __SpeedUP__ ios_base::sync_with_stdio(0);cin.tie(0);cout.tie(0);
+#define __FasterIO__ ios_base::sync_with_stdio(0);cin.tie(0);cout.tie(0);
 //Loops
 #define f(i,n) for(int i=0;i<n;i++) //For from 0 to n-1
 #define rf(i,n) for(int i=n-1;i>=0;i--) //For from n-1 to 0
@@ -30,7 +30,7 @@ typedef std::pair <ll, ll> pll;
 // ###################################################################################################### //
 
 int main(){
-	// __SpeedUP__ //Uncomment for a faster runtime
+	// __FasterIO__ //Uncomment for improve runtime
 	string line;
 	while(getline(cin,line)){
 		cout << line << endl;

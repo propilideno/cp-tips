@@ -31,7 +31,7 @@ const int INF_N = 0xcfcfcfcf; //Min negative integer that don't cause underflow 
 #define rall(c) c.rbegin(), c.rend()
 #define sz(x) ((int)(x).size())
 //IO Optimization
-#define __SpeedUP__ ios_base::sync_with_stdio(0);cin.tie(0);cout.tie(0);
+#define __FasterIO__ ios_base::sync_with_stdio(0);cin.tie(0);cout.tie(0);
 //Data Structures and Types
 using namespace std;
 typedef long long ll;
@@ -48,7 +48,7 @@ typedef std::pair<std::string, int> psi;
 /* ################################################################################################## */
 
 int main(){
-	// __SpeedUP__ //Uncomment for a faster runtime
+	// __FasterIO__ //Uncomment for improve runtime
 	string line;
 	while(getline(cin,line)){
 		cout << line << endl;

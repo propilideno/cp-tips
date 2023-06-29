@@ -7,7 +7,7 @@
 //Constants
 const double PI = acos(-1);
 //IO Optimization
-#define SpeedUP ios_base::sync_with_stdio(false); //If false, don't use stdio and iostream at the same time
+#define __FasterIO__ ios_base::sync_with_stdio(false); //If false, don't use stdio and iostream at the same time
 //Types
 using namespace std;
 typedef long long ll;
@@ -17,7 +17,7 @@ typedef std::vector<ll> vll;
 // ###################################################################################################### //
 
 int main(){
-	//SpeedUP; //Uncomment for a faster runtime
+	//__FasterIO__; //Uncomment for improve runtime
 	string line;
 	while(getline(cin,line)){
 		cout << line << endl;

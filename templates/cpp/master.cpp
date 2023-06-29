@@ -47,7 +47,7 @@ typedef std::pair<std::string, int> psi;
 #define sz(x) ((int)(x).size())
 #define ms(arr,val) memset(arr,val,sizeof(arr))
 //IO Optimization
-#define __SpeedUP__ ios_base::sync_with_stdio(0);cin.tie(0);cout.tie(0);
+#define __FasterIO__ ios_base::sync_with_stdio(0);cin.tie(0);cout.tie(0);
 // Custom Data Structs
 struct Graph { // Call like: Graph G(n); G.addEdge(u,v);
     int n; vector<unordered_set<int>> adj;
@@ -65,7 +65,7 @@ void dbfs(Graph& G, int v, vector<bool>& visited);			 // BFS: dbfs<queue,int>(G,
 
 
 int main(){
-	// __SpeedUP__ //Uncomment for a faster runtime
+	// __FasterIO__ //Uncomment for improve runtime
 	string line;
 	while(getline(cin,line)){
 		cout << line << endl;
