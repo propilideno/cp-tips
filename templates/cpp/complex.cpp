@@ -20,7 +20,7 @@ const int INF_N = 0xcfcfcfcf; //Min negative integer that don't cause underflow 
 #define mp make_pair
 #define ff first
 #define ss second
-//loops
+//Loops
 #define f(i,n) for(int i=0;i<n;i++) //From 0 to n-1
 #define rf(i,n) for(int i=n-1;i>=0;i--) //From n-1 to 0
 #define F(i,a,b) for(int i=a;i<b;i++)
@@ -32,7 +32,7 @@ const int INF_N = 0xcfcfcfcf; //Min negative integer that don't cause underflow 
 #define sz(x) ((int)(x).size())
 //IO Optimization
 #define __FasterIO__ ios_base::sync_with_stdio(0);cin.tie(0);cout.tie(0);
-//Data Structures and Types
+//Types
 using namespace std;
 typedef long long ll;
 typedef unsigned long long ull;
