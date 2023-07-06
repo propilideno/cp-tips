@@ -56,16 +56,17 @@ struct Graph { // Call like: Graph G(n); G.addEdge(u,v);
     void addEdge(int u, int v) { adj[u].insert(v); /* adj[v].insert(u); */ }
 	void removeEdge(int u, int v) { adj[u].erase(v); /* adj[v].erase(u); */ }
 };
-template <template<typename...> class Container, typename T> // vector <bool> visited(n,false);
-void dbfs(Graph& G, int v, vector<bool>& visited) {			// DFS: dbfs<stack,int>(G,v,visited)
-    Container<T> arr; arr.push(v); visited[v] = true;		// BFS: dbfs<queue,int>(G,v,visited)
+template <template<typename...> class Container, typename T>// vector <bool> visited(n,false);
+set<int> dbfs(Graph& G, int v, vector<bool>& visited) {		// DFS: dbfs<stack,int>(G,v,visited);
+    Container<T> arr; arr.push(v); visited[v] = true;		// BFS: dbfs<queue,int>(G,v,visited);
+	set<int> visited_order;
 
     while (!arr.empty()) {
 		if constexpr(is_same<Container<T>, stack<typename Container<T>::value_type>>::value) {
-			v = arr.top(); // Use top if using std::stack
+			v = arr.top();					   //	top if std::stack
 		} else { v = arr.front(); } arr.pop(); // front if std::queue
 		
-        cout << v << " "; // Do something with v
+		visited_order.insert(v); // Add v to visited order
 
         for (int w : G.adj[v]) { // For each unvisited neighbor of v
             if (!visited[w]) {
@@ -73,16 +74,19 @@ void dbfs(Graph& G, int v, vector<bool>& visited) {			// DFS: dbfs<stack,int>(G,
             }
         }
     }
+	_vec(visited_order);
+	return visited_order;
 }
 /* ############################################################################################## */
 
 
 int main(){
-	// __FasterIO__ //Uncomment for improve runtime
+	//__FasterIO__		//Uncomment for improve runtime
+	//__log__			//Uncomment for redirect output to LOG.txt
 	string line;
 	while(getline(cin,line)){
 		cout << line << endl;
 	}
 
-	// __time__ //Uncomment for show runtime
+	//__time__			//Uncomment for show runtime
 }

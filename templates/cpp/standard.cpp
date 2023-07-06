@@ -30,11 +30,12 @@ typedef std::pair <ll, ll> pll;
 // ###################################################################################################### //
 
 int main(){
-	// __FasterIO__ //Uncomment for improve runtime
+	//__FasterIO__		//Uncomment for improve runtime
+	//__log__			//Uncomment for redirect output to LOG.txt
 	string line;
 	while(getline(cin,line)){
 		cout << line << endl;
 	}
 
-	// __time__ //Uncomment for show runtime
+	//__time__			//Uncomment for show runtime
 }
