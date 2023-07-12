@@ -53,30 +53,40 @@ template <class T> using pqg = priority_queue<T, vector<T>, greater<T>>; //Min H
 struct Graph { // Call like: Graph G(n); G.addEdge(u,v);
     int n; vector<unordered_set<int>> adj;
 	Graph(int size) : n(size) { adj.resize(size); }
-    void addEdge(int u, int v) { adj[u].insert(v); /* adj[v].insert(u); */ }
-	void removeEdge(int u, int v) { adj[u].erase(v); /* adj[v].erase(u); */ }
+    void addEdge(int u, int v) { adj[u].insert(v); adj[v].insert(u); }
+	void removeEdge(int u, int v) { adj[u].erase(v); adj[v].erase(u); }
+	vi backtrack(vi parent, int start, int end) {
+		vi path; path.pb(end);
+		while (path.back() != start) { path.pb(parent[path.back()]); }
+		reverse(all(path)); return path;
+	}
 };
 template <template<typename...> class Container, typename T>// vector <bool> visited(n,false);
-set<int> dbfs(Graph& G, int v, vector<bool>& visited) {		// DFS: dbfs<stack,int>(G,v,visited);
-    Container<T> arr; arr.push(v); visited[v] = true;		// BFS: dbfs<queue,int>(G,v,visited);
-	set<int> visited_order;
+vector<int> dbfs(Graph& G, int v) {							// DFS: dbfs<stack,int>(G,v,visited);
+	vector<int> visited_order;								// BFS: dbfs<queue,int>(G,v,visited);
+	vector<int> visited(G.n,INF_P);
+    Container<T> arr; arr.push(v); visited[v] = v;
 
     while (!arr.empty()) {
 		if constexpr(is_same<Container<T>, stack<typename Container<T>::value_type>>::value) {
 			v = arr.top();					   //	top if std::stack
 		} else { v = arr.front(); } arr.pop(); // front if std::queue
 		
-		visited_order.insert(v); // Add v to visited order
+		visited_order.pb(v); // Add v to visited order
 
         for (int w : G.adj[v]) { // For each unvisited neighbor of v
-            if (!visited[w]) {
-                arr.push(w); visited[w] = true;
+            if (visited[w] == INF_P) {
+                arr.push(w);
+				visited[w] = v; //Keep track of PARENT
+				// visited[w] = visited[v] + 1; //Keep track of DISTANCE
             }
         }
     }
-	_vec(visited_order);
-	return visited_order;
+
+	// return visited_order; // Uncomment to return visited order
+	return visited;
 }
+
 /* ############################################################################################## */
 
 
