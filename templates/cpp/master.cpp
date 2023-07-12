@@ -61,6 +61,18 @@ struct Graph { // Call like: Graph G(n); G.addEdge(u,v);
 		reverse(all(path)); return path;
 	}
 };
+struct WGraph { // Call like: WGraph G(n); G.addEdge(u,v,weight);
+    int n; vector<unordered_map<int,int>> adj;
+	WGraph(int size) : n(size) { adj.resize(size); }
+    void addEdge(int u, int v, int weight) { adj[u][v] = weight; /* adj[v][u] = weight */ }
+	void removeEdge(int u, int v, int weight) { adj[u].erase(v); /* adj[v].erase(u); */ }
+	bool hasEdge(int u, int v) { return adj[u].count(v); }
+	vi backtrack(vi parent, int start, int end) {
+		vi path; path.pb(end);
+		while (path.back() != start) { path.pb(parent[path.back()]); }
+		reverse(all(path)); return path;
+	}
+};
 template <template<typename...> class Container, typename T> // DFS: dbfs<stack,int>(G,v,visited);
 vector<int> dbfs(Graph& G, int v) {							 // BFS: dbfs<queue,int>(G,v,visited);
 	vector<int> visited_order; //Order of graph traversal
@@ -74,6 +86,7 @@ vector<int> dbfs(Graph& G, int v) {							 // BFS: dbfs<queue,int>(G,v,visited);
 		
 		visited_order.pb(v); // Add v to visited order
 
+		// for(auto neighbor : G.adj[v]) { int w = neighbor.ff; // Uncomment for Weighted Graphs
         for (int w : G.adj[v]) { // For each unvisited neighbor of v
             if (visited[w] == INF_P) {
                 arr.push(w);
