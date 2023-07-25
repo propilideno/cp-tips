@@ -13,8 +13,7 @@ std::chrono::high_resolution_clock::now() - beg); cout<<"Time: "<<duration.count
 const auto beg = std::chrono::high_resolution_clock::now(); //Begining of the program
 const double PI = acos(-1); //PI
 const double E = 1e-8; //Small Number (10^-8)
-const int INF_P = 0x3f3f3f3f; //Max positive integer that don't cause overflow when doubled
-const int INF_N = 0xcfcfcfcf; //Min negative integer that don't cause underflow when doubled
+const int INF = 0x3f3f3f3f; //Big integer that don't cause overflow when doubled
 //Shortened Methods
 #define pb push_back
 #define mp make_pair

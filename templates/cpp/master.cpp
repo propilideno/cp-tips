@@ -13,8 +13,7 @@ std::chrono::high_resolution_clock::now() - beg); cout<<"Time: "<<duration.count
 const auto beg = std::chrono::high_resolution_clock::now(); //Begining of the program
 const double PI = acos(-1); //PI
 const double E = 1e-8; //Small Number (10^-8)
-const int INF_P = 0x3f3f3f3f; //Max positive integer that don't cause overflow when doubled
-const int INF_N = 0xcfcfcfcf; //Min negative integer that don't cause underflow when doubled
+const int INF = 0x3f3f3f3f; //Big integer that don't cause overflow when doubled
 const int MOD = 1e9+7; //Mod operations (prime number)
 //Shortened Methods
 #define pb push_back
@@ -55,42 +54,29 @@ struct Graph { // Call like: Graph G(n); G.addEdge(u,v);
 	Graph(int size) : n(size) { adj.resize(size); }
     void addEdge(int u, int v) { adj[u].insert(v); /* adj[v].insert(u); */ }
 	void removeEdge(int u, int v) { adj[u].erase(v); /* adj[v].erase(u); */ }
-	vi backtrack(vi parent, int start, int end) {
-		vi path; path.pb(end);
-		while (path.back() != start) { path.pb(parent[path.back()]); }
-		reverse(all(path)); return path;
-	}
 };
-struct WGraph { // Call like: WGraph G(n); G.addEdge(u,v,weight);
-    int n; vector<unordered_map<int,int>> adj;
-	WGraph(int size) : n(size) { adj.resize(size); }
-    void addEdge(int u, int v, int weight) { adj[u][v] = weight; /* adj[v][u] = weight */ }
-	void removeEdge(int u, int v, int weight) { adj[u].erase(v); /* adj[v].erase(u); */ }
-	bool hasEdge(int u, int v) { return adj[u].count(v); }
-	vi backtrack(vi parent, int start, int end) {
-		vi path; path.pb(end);
-		while (path.back() != start) { path.pb(parent[path.back()]); }
-		reverse(all(path)); return path;
-	}
-};
-template <template<typename...> class Container, typename T> // DFS: dbfs<stack,int>(G,v,visited);
-vector<int> dbfs(Graph& G, int v) {							 // BFS: dbfs<queue,int>(G,v,visited);
+vi backtrack(vi parent, int start, int end) { //Backtrack visited nodes from end to start
+	vi path; path.pb(end);
+	while (path.back() != start) { path.pb(parent[path.back()]); }
+	reverse(all(path)); return path;
+}
+template <template<typename...> class Container, typename T> // DFS: dbfs<stack,int>(G,v);
+vector<int> dbfs(Graph& G, int v) {							 // BFS: dbfs<queue,int>(G,v);
 	vector<int> visited_order; //Order of graph traversal
-	vector<int> visited(G.n,INF_P); // Keep track of visited nodes
-    Container<T> arr; arr.push(v); visited[v] = v;
+	vector<int> visited(G.n,INF); // Keep track of visited nodes
+    Container<T> arr; arr.push(v); visited[v] = v; // Starts at v
 
     while (!arr.empty()) {
 		if constexpr(is_same<Container<T>, stack<typename Container<T>::value_type>>::value) {
 			v = arr.top();					   //	top if std::stack
 		} else { v = arr.front(); } arr.pop(); // front if std::queue
 		
-		visited_order.pb(v); // Add v to visited order
+		visited_order.pb(v); // DO SOMETHING WITH VISITED NODE
 
-		// for(auto neighbor : G.adj[v]) { int w = neighbor.ff; // Uncomment for Weighted Graphs
         for (int w : G.adj[v]) { // For each unvisited neighbor of v
-            if (visited[w] == INF_P) {
+            if (visited[w] == INF) {
                 arr.push(w);
-				visited[w] = v; //Keep track of PARENT
+				visited[w] = v;					//Keep track of PARENT
 				// visited[w] = visited[v] + 1; //Keep track of DISTANCE
             }
         }
