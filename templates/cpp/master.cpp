@@ -1,4 +1,4 @@
-/* ########################## Template available in: https://propi.dev/cp  ########################## */
+/* ######################## Template available in: https://propi.dev/cp  ######################## */
 //#pragma GCC optimize("-O3","-funroll-all-loops","-ffast-math") //Uncomment for a faster runtime
 #include <bits/stdc++.h>
 //Debug methods
@@ -8,12 +8,12 @@
 #define _pair(x) {cout << #x << " = | " << "1st: " << x.first << " | " << "2nd: " << x.second << endl;} //Print pair
 #define __time__ { auto duration = chrono::duration<double>( /* Show runtime */ \
 std::chrono::high_resolution_clock::now() - beg); cout<<"Time: "<<duration.count()<<endl;}
+#define __log__ { std::FILE* file = std::freopen("LOG.txt", "w", stdout); }
 //Constants
 const auto beg = std::chrono::high_resolution_clock::now(); //Begining of the program
 const double PI = acos(-1); //PI
 const double E = 1e-8; //Small Number (10^-8)
-const int INF_P = 0x3f3f3f3f; //Max positive integer that don't cause overflow when doubled
-const int INF_N = 0xcfcfcfcf; //Min negative integer that don't cause underflow when doubled
+const int INF = 0x3f3f3f3f; //Big integer that don't cause overflow when doubled
 const int MOD = 1e9+7; //Mod operations (prime number)
 //Shortened Methods
 #define pb push_back
@@ -24,15 +24,16 @@ const int MOD = 1e9+7; //Mod operations (prime number)
 using namespace std;
 typedef long long ll;
 typedef unsigned long long ull;
-typedef std::pair <ll, ll> pll;
-typedef std::vector<ll> vll;
 typedef std::vector<int> vi;
+typedef std::vector<ll> vll;
 typedef std::vector<std::string> vs;
-typedef std::vector<std::pair<int, int> > vpii;
+typedef std::vector<std::pair<int, int>> vpii;
 typedef std::map<int, int> mii;
 typedef std::map<ll, ll> mll;
 typedef std::pair<int, int> pii;
+typedef std::pair<ll, ll> pll;
 typedef std::pair<std::string, int> psi;
+template <class T> using pqg = priority_queue<T, vector<T>, greater<T>>; //Min Heap
 //loops
 #define f(i,n) for(int i=0;i<n;i++) //From 0 to n-1
 #define rf(i,n) for(int i=n-1;i>=0;i--) //From n-1 to 0
@@ -46,53 +47,55 @@ typedef std::pair<std::string, int> psi;
 #define sz(x) ((int)(x).size())
 #define ms(arr,val) memset(arr,val,sizeof(arr))
 //IO Optimization
-#define __SpeedUP__ ios_base::sync_with_stdio(0);cin.tie(0);cout.tie(0);
-// Custom Data Structs
+#define __FasterIO__ ios_base::sync_with_stdio(0);cin.tie(0);cout.tie(0);
+//Templates
 struct Graph { // Call like: Graph G(n); G.addEdge(u,v);
     int n; vector<unordered_set<int>> adj;
 	Graph(int size) : n(size) { adj.resize(size); }
-    void addEdge(int u, int v) { adj[u].insert(v); adj[v].insert(u); }
-	void removeEdge(int u, int v) { adj[u].erase(v); adj[v].erase(u); }
+    void addEdge(int u, int v) { adj[u].insert(v); /* adj[v].insert(u); */ }
+	void removeEdge(int u, int v) { adj[u].erase(v); /* adj[v].erase(u); */ }
 };
-// HEADERS
-template <class T> using pqg = priority_queue<T, vector<T>, greater<T>>; //Min Heap
-struct Graph; //Graph with adjacency list					 // vector <bool> visited(n,false);
-template <template<typename...> class Container, typename T> // DFS: dbfs<stack,int>(G,v,visited)
-void dbfs(Graph& G, int v, vector<bool>& visited);			 // BFS: dbfs<queue,int>(G,v,visited)
+template <template<typename...> class Container, typename T> // DFS: dbfs<stack,int>(G,v);
+vector<int> dbfs(Graph& G, int v) {							 // BFS: dbfs<queue,int>(G,v);
+	vector<int> visited_order; //Order of graph traversal
+	vector<int> visited(G.n,INF); // Keep track of visited nodes
+    Container<T> arr; arr.push(v); visited[v] = v; // Starts at v
 
-/* ################################################################################################## */
+    while (!arr.empty()) {
+		if constexpr(is_same<Container<T>, stack<typename Container<T>::value_type>>::value) {
+			v = arr.top();					   //	top if std::stack
+		} else { v = arr.front(); } arr.pop(); // front if std::queue
+		
+		visited_order.pb(v); // DO SOMETHING WITH VISITED NODE
+
+        for (int w : G.adj[v]) { // For each unvisited neighbor of v
+            if (visited[w] == INF) {
+                arr.push(w);
+				visited[w] = v;					//Keep track of PARENT
+				// visited[w] = visited[v] + 1; //Keep track of DISTANCE
+            }
+        }
+    }
+
+	// _vec(visited_order)	 // Uncomment to print visited order
+	return visited;
+}
+vi backtrack(vi parent, int start, int end) { //Backtrack visited nodes to reconstruct a path
+	vi path; path.pb(end);
+	while (path.back() != start) { path.pb(parent[path.back()]); }
+	reverse(all(path)); return path;
+}
+
+/* ############################################################################################## */
 
 
 int main(){
-	// __SpeedUP__ //Uncomment for a faster runtime
+	//__FasterIO__		//Uncomment for improve runtime
+	//__log__			//Uncomment for redirect output to LOG.txt
 	string line;
 	while(getline(cin,line)){
 		cout << line << endl;
 	}
 
-	// __time__ //Uncomment for show runtime
+	//__time__			//Uncomment for show runtime
 }
-
-
-/* ################################################################################################## */
-
-template <template<typename...> class Container, typename T>
-void dbfs(Graph& G, int v, vector<bool>& visited) {
-    Container<T> arr; arr.push(v); visited[v] = true;
-
-    while (!arr.empty()) {
-		if constexpr(is_same<Container<T>, stack<typename Container<T>::value_type>>::value) {
-			v = arr.top(); // Use top if using std::stack
-		} else { v = arr.front(); } arr.pop(); // front if std::queue
-		
-        cout << v << " "; // Do something with v
-
-        for (int w : G.adj[v]) { // For each unvisited neighbor of v
-            if (!visited[w]) {
-                arr.push(w); visited[w] = true;
-            }
-        }
-    } cout << endl;
-}
-
-/* ########################## Template available in: https://propi.dev/cp  ########################## */
