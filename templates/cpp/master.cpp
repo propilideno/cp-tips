@@ -55,11 +55,6 @@ struct Graph { // Call like: Graph G(n); G.addEdge(u,v);
     void addEdge(int u, int v) { adj[u].insert(v); /* adj[v].insert(u); */ }
 	void removeEdge(int u, int v) { adj[u].erase(v); /* adj[v].erase(u); */ }
 };
-vi backtrack(vi parent, int start, int end) { //Backtrack visited nodes from end to start
-	vi path; path.pb(end);
-	while (path.back() != start) { path.pb(parent[path.back()]); }
-	reverse(all(path)); return path;
-}
 template <template<typename...> class Container, typename T> // DFS: dbfs<stack,int>(G,v);
 vector<int> dbfs(Graph& G, int v) {							 // BFS: dbfs<queue,int>(G,v);
 	vector<int> visited_order; //Order of graph traversal
@@ -82,8 +77,13 @@ vector<int> dbfs(Graph& G, int v) {							 // BFS: dbfs<queue,int>(G,v);
         }
     }
 
-	// return visited_order; // Uncomment to return visited order
+	// _vec(visited_order)	 // Uncomment to print visited order
 	return visited;
+}
+vi backtrack(vi parent, int start, int end) { //Backtrack visited nodes to reconstruct a path
+	vi path; path.pb(end);
+	while (path.back() != start) { path.pb(parent[path.back()]); }
+	reverse(all(path)); return path;
 }
 
 /* ############################################################################################## */
