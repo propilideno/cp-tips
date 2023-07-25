@@ -19,10 +19,10 @@ selectTemplate(){
 	while true; do
 		echo -e "\e[90m=========\e[0m Select your \e[32mC++ Template\e[0m \e[90m=========\e[0m"
 		echo -e "If you don't know what choose, select \e[32mBasic\e[0m"
-		echo -e "\e[32m1\e[0m) \e[32mBasic\e[0m - 26 lines"
-		echo -e "\e[33m2\e[0m) \e[33mStandard\e[0m - 39 lines"
-		echo -e "\e[31m3\e[0m) \e[31mComplex\e[0m - 57 lines"
-		echo -e "\e[95m4\e[1m) \e[95mMaster\e[0m - 98 lines"
+		echo -e "\e[32m1\e[0m) \e[32mBasic\e[0m - 32 lines"
+		echo -e "\e[33m2\e[0m) \e[33mStandard\e[0m - 40 lines"
+		echo -e "\e[31m3\e[0m) \e[31mComplex\e[0m - 58 lines"
+		echo -e "\e[95m4\e[1m) \e[95mMaster\e[0m - 101 lines"
 		gray "============================================"
 		echo -n "My choice is: "
 		read -r choice
